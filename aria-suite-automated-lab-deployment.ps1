@@ -251,6 +251,13 @@ if($deployAriaLCM -eq 1) {
     Connect-VIServer -Server $vCenterServerFQDN -User $vCenterUsername -Password $vCenterPassword | Out-Null
 
     if(Get-View -ViewType VirtualMachine -Property Name -Filter @{"name"=$AriaSuiteLifecycleVMName}) {
+        $ovfconfig = Get-OvfConfiguration $AriaSuiteLifecycleOVA
+
+        # New OVF property in Aria LCM 8.16
+        if($ovfconfig.Common.admin_password) {
+            $changeAdminPassword = 0
+        }
+
         My-Logger "Aria Suite Lifecycle Manager has already been deployed ..."
         Disconnect-VIServer * -Confirm:$false | Out-Null
     } else {
@@ -271,6 +278,12 @@ if($deployAriaLCM -eq 1) {
         $ovfconfig.common.va_telemetry_enabled.value = "False"
         $ovfconfig.common.va_fips_enabled.value = "False"
         $ovfconfig.common.va_ntp_servers.value = $VMNTP
+
+        # New OVF property in Aria LCM 8.16
+        if($ovfconfig.Common.admin_password) {
+            $ovfconfig.Common.admin_password.Value = $AriaSuiteLifecycleAdminPassword
+            $changeAdminPassword = 0
+        }
 
         $datastore = Get-Datastore -Server $viConnection -Name $VMDatastore | Select -First 1
         $cluster = Get-Cluster -Server $viConnection -Name $VMCluster

@@ -17,6 +17,10 @@ Below is a diagram of what is deployed as part of this solution and you will nee
 
 ![](screenshots/screenshot-1.png)
 
+## Changelog
+
+* 03/03/2024 - Add support for Aria LCM 8.16
+
 ## Requirements
 
 * vCenter Server running at least vSphere 7.0 or later
@@ -26,15 +30,15 @@ Below is a diagram of what is deployed as part of this solution and you will nee
         * Ability to provision up to 1.26TB of total storage
 * Latest PowerShell Core and PowerCLI release installed
 * Aria licenses for Aria Operations, Aria Operations for Logs and/or Aria Automation
-* Aria Suite LCM 8.14 OVAs pre-downloaded (see the table below for the exact versions)
+* Aria Suite LCM 8.16 or 8.14 OVAs pre-downloaded (see the table below for the exact versions)
 
 | Function        | OVA Appliance                                               | Appliance Size | vCPU | Memory | Storage |
 |-----------------|-------------------------------------------------------------|----------------|------|--------|---------|
-| Aria Lifecycle  | [VMware-Aria-Suite-Lifecycle-Appliance-8.14.0.4-22630472.ova](https://customerconnect.vmware.com/downloads/details?downloadGroup=SUITELIFECYCLE814&productId=938&rPId=115017) | N/A            | 2    | 8GB    | 117GB   |
+| Aria Lifecycle  | [VMware-Aria-Suite-Lifecycle-Appliance-8.16.0.4-23377566.ova](https://customerconnect.vmware.com/downloads/details?downloadGroup=SUITELIFECYCLE816&productId=938&rPId=115633) or [VMware-Aria-Suite-Lifecycle-Appliance-8.14.0.4-22630472.ova](https://customerconnect.vmware.com/downloads/details?downloadGroup=SUITELIFECYCLE814&productId=938&rPId=115017) | N/A            | 2    | 8GB    | 117GB   |
 | Aria Identity   | [identity-manager-3.3.7.0-21173100_OVF10.ova](https://customerconnect.vmware.com/downloads/details?downloadGroup=VIDM_ONPREM_3370&productId=938&rPId=115020)                 | small          | 6    | 10GB   | 100GB   |
-| Aria Logs       | [VMware-vRealize-Log-Insight-8.14.0.0-22564181.ova](https://customerconnect.vmware.com/downloads/details?downloadGroup=OPLOGS-8140&productId=938&rPId=115018)           | small          | 4    | 8GB    | 530GB   |
-| Aria Operations | [vRealize-Operations-Manager-Appliance-8.14.0.22610776.ova](https://customerconnect.vmware.com/downloads/details?downloadGroup=OPERATIONS-8140&productId=938&rPId=115018)   | xsmall         | 2    | 8GB    | 274GB   |
-| Aria Automation | [Prelude_VA-8.14.0.33079-22618990_OVF10.ov](https://customerconnect.vmware.com/downloads/details?downloadGroup=AUTOMATION-8160&productId=938&rPId=115018)                  | medium         | 12   | 48GB   | 246GB   |
+| Aria Logs       | [VMware-vRealize-Log-Insight-8.16.0.0-23364779.ova](https://customerconnect.vmware.com/downloads/details?downloadGroup=OPLOGS-8160&productId=938&rPId=115633) or [VMware-vRealize-Log-Insight-8.14.0.0-22564181.ova](https://customerconnect.vmware.com/downloads/details?downloadGroup=OPLOGS-8140&productId=938&rPId=115018)           | small          | 4    | 8GB    | 530GB   |
+| Aria Operations | [vRealize-Operations-Manager-Appliance-8.16.1.23365475.ova](https://customerconnect.vmware.com/downloads/details?downloadGroup=OPERATIONS-8161&productId=938&rPId=115633) or [vRealize-Operations-Manager-Appliance-8.14.0.22610776.ova](https://customerconnect.vmware.com/downloads/details?downloadGroup=OPERATIONS-8140&productId=938&rPId=115018)   | xsmall         | 2    | 8GB    | 274GB   |
+| Aria Automation | [Prelude_VA-8.16.1.34314-23373968_OVF10.ova](https://customerconnect.vmware.com/downloads/details?downloadGroup=AUTOMATION-8161&productId=938&rPId=115633) or [Prelude_VA-8.14.0.33079-22618990_OVF10.ov](https://customerconnect.vmware.com/downloads/details?downloadGroup=AUTOMATION-8160&productId=938&rPId=115018)                  | medium         | 12   | 48GB   | 246GB   |
 
 ## Configuration
 
